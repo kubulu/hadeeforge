@@ -1,0 +1,48 @@
+
+@import "themes/variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+.border-radius{
+  border-radius: 20px;
+}
+.carousel{
+  height: 100%;
+}
+
+.carouselIndicators {
+  position: absolute;
+  top: 0;
+  left: 220px;
+  width: auto;
+  margin-left: 10px; /* Adjust as needed */
+}
+
+.carousel-inner{
+  height: auto;
+}
+
+.image-container {
+  display: flex;
+  animation: scrollImages 10s linear infinite;
+}
+
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+

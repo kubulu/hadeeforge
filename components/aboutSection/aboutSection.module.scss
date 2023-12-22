@@ -1,0 +1,24 @@
+.aboutSection{
+  .aboutCard{
+    border-radius: 20px;
+    background: linear-gradient(180deg, #0A4A95 0%, #3589EB 100%);
+    padding: 100px;
+    color: #ffffff;
+    margin-top: 20px;
+    height: 100%;
+    p{
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  .aboutImg{
+    margin-top: 20px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    img{
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

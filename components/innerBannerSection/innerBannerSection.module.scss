@@ -1,0 +1,15 @@
+.innerBanner{
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  border-radius: 20px;
+  padding-left: 60px;
+  color: #ffffff;
+  width: 100%;
+  background: linear-gradient(180deg, #0A4A95 0%, #3589EB 100%);
+  .bannerContent{
+    h2{
+      font-size: 46px;
+    }
+  }
+}
