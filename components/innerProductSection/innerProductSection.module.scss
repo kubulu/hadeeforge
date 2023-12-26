@@ -1,0 +1,30 @@
+.innerBanner{
+  min-height: 400px;
+  border-radius: 20px;
+  padding: 60px;
+  color: #000000;
+  width: 100%;
+  background: linear-gradient(180deg, #ebf4ff 0%, #e7f2ff 100%);
+  margin-top: 40px;
+  .serviceCard{
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    margin-top: 40px;
+    min-height: 200px;
+    img{
+      filter: invert(1);
+    }
+    h2{
+      font-size: 24px;
+      font-weight: 600;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+  }
+  .bannerContent{
+    h2{
+      font-size: 96px;
+    }
+  }
+}
