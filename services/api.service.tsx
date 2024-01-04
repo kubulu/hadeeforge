@@ -4,7 +4,7 @@ export class ApiService {
     public getBaseUrl(): string {
         if(process.env.NEXT_PUBLIC_API_ENV == 'production'){
            
-           return "https://combifer-wp.netiapps.com/";
+           return "https://wp.hadeeforge.in/";
         }
        else if(process.env.NEXT_PUBLIC_API_ENV == 'dev'){
          
@@ -19,7 +19,7 @@ export class ApiService {
       public getSiteUrl(): string {
         if(process.env.NEXT_PUBLIC_API_ENV == 'production'){
            
-           return "https://combifer.netiapps.com/";
+           return "https://www.hadeeforge.in/";
         }
        else if(process.env.NEXT_PUBLIC_API_ENV == 'dev'){
          
@@ -27,7 +27,7 @@ export class ApiService {
           
         }
         else{
-            return "https://combifer.netiapps.com/";
+          return "https://www.hadeeforge.in/";
         }
            
       }
