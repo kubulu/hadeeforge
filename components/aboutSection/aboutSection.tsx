@@ -12,7 +12,7 @@ export default function AboutSection(aboutSection: any) {
                     <div className={`col-md-8`}>
                         <div className={styles.aboutCard}>
                         {aboutSection.aboutSection.about_card.text_field.map((element: any, index: any)=>(
-                            <p> {element.text} </p>
+                            <p key={index}> {element.text} </p>
                         ))}
                             <Link href={aboutSection.aboutSection.about_card.link} className={`btn btn-outline-light`}> {aboutSection.aboutSection.about_card.link_name} </Link>
 
@@ -20,7 +20,7 @@ export default function AboutSection(aboutSection: any) {
                     </div>
                     <div className={`col-md-4`}>
                         <div className={styles.aboutImg}>
-                            <img src={aboutSection.aboutSection.image}/>
+                            <img src={aboutSection.aboutSection.image} alt="about"/>
                         </div>
                     </div>
                 </div>

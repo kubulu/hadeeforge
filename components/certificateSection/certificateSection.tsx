@@ -18,7 +18,7 @@ export default function CertificateSection(certificate: any) {
                         </div>
                         <div className={`col-md-6 d-flex justify-content-center align-items-center`}>
                             <div className={styles.certificateImg}>
-                               <img src={certificate.certificate.img}/>
+                               <img src={certificate.certificate.img} alt="certificate"/>
                             </div>
                     </div>
                 </div>

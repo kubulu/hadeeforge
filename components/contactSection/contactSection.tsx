@@ -21,10 +21,10 @@ export default function ContactSection(contact: any) {
                            </div>
                            <div className={`col-md-2`}>
                                <h1 className={`d-flex justify-content-between align-items-center`}>
-                                    <a href={contact.contact.social_media.fb_link} className="bi bi-facebook"></a> 
-                                    <a href={contact.contact.social_media.instagram_link} className="bi bi-instagram"></a>
-                                    <a href={contact.contact.social_media.twitter_link} className="bi bi-twitter-x"></a>
-                                    <a href={contact.contact.social_media.youtube_link} className="bi bi-youtube"></a>
+                                    <Link href={contact.contact.social_media.fb_link} className="bi bi-facebook"></Link> 
+                                    <Link href={contact.contact.social_media.instagram_link} className="bi bi-instagram"></Link>
+                                    <Link href={contact.contact.social_media.twitter_link} className="bi bi-twitter-x"></Link>
+                                    <Link href={contact.contact.social_media.youtube_link} className="bi bi-youtube"></Link>
                                </h1>
                            </div>
                        </div>
@@ -35,17 +35,12 @@ export default function ContactSection(contact: any) {
                                <div className={`col-md-6`}>
                                    <div className={styles.addressCard}>
                                     {contact.contact.address.map((element: any, index: any)=>(
-                                       <div className={styles.address}>
+                                       <div className={styles.address} key={index}>
                                            <h2> {element.title} </h2>
                                            <p> {element.address} </p>
                                            <div className={styles.border}></div>
                                        </div>
                                        ))}
-                                       
-                                       {/* <div className={styles.address}>
-                                           <h2>Works</h2>
-                                           <p>No. 47/48, Jakkasandra Village, Jakkasandra Ind Area, Malur Taluk, Kolar district, Karnataka – 563130.</p>
-                                       </div> */}
                                    </div>
                                </div>
                                <div className={`col-md-6`}>
@@ -68,7 +63,7 @@ export default function ContactSection(contact: any) {
                                                </div>
                                                <div className="mb-3">
                                                    <label  className="form-label">Message</label>
-                                                   <textarea className="form-control" rows="1"></textarea>
+                                                   <textarea className="form-control" ></textarea>
                                                </div>
                                                <div className="mb-3">
                                                   <button className={`btn btn-primary`}>SEND A MESSAGE</button>

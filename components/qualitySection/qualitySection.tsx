@@ -20,12 +20,12 @@ export default function QualitySection(quality: any) {
                            <h3> {quality.quality.title} </h3>
                            <ul>
                                 {quality.quality.list.map((element: any, index: any)=>(
-                                <li> {element.name} </li>
+                                <li key={index}> {element.name} </li>
                                 ))}  
                            </ul>
                        </div>
                        <div className={`col-md-6`}>
-                           <img src={quality.quality.img} width={`100%`}/>
+                           <img src={quality.quality.img} width={`100%`} alt="image"/>
                        </div>
                    </div>
                </div>

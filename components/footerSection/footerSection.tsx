@@ -12,7 +12,7 @@ export default function FooterSection(footer: any) {
                         <div className={`row px-0`}>
                         <div className={`col-md-6`}>
                             <div className={styles.footerContent}>
-                                <img src={footer.footer.content.logo} />
+                                <img src={footer.footer.content.logo} alt="logo"/>
                                 <p className={`w-50 mt-4`}> {footer.footer.content.text} </p>
                             </div>
 

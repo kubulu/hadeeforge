@@ -16,16 +16,16 @@ export default function InnerProductSection(products: any) {
                         </div>
                     </div>
                     <div className={`col-6`}>
-                        <img src={products.products.img} />
+                        <img src={products.products.img} alt="images"/>
                     </div>
                 </div>
 
                <div className={`row`}>
                 {products.products.card.map((element: any, index: any)=>(
-                   <div className={`col-md-3`}>
-                       <div className={styles.serviceCard} key={index}>
+                   <div className={`col-md-3`} key={index}>
+                       <div className={styles.serviceCard} >
                            <h2> {element.title} </h2>
-                           <Link href={element.link}><img src={`/images/more.svg`} /> </Link>
+                           <Link href={element.link}><img src={`/images/more.svg`} alt="arrow" /> </Link>
                        </div>
                    </div>
                    ))}

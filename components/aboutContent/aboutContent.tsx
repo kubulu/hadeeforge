@@ -15,7 +15,7 @@ export default function AboutContent(aboutContent: any) {
                 </div>
                 <div className={`row pb-5`}>
                     {aboutContent.aboutContent.about_card.map((element: any, index: any)=>(
-                        <div className={`col-md-6`}>
+                        <div className={`col-md-6`} key={index}>
                             <div className={styles.aboutCard}>
                                 <h3> {element.title} </h3>
                                 <p> {element.text} </p>

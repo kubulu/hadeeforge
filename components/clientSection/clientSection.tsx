@@ -37,7 +37,7 @@ export default function ClientSection(client: any) {
                 <div className={styles.imageScroll}>
                     {client.client.client.map((element: any, index: any)=>(
                         <div className={styles.img} key={index}>
-                            <img src={element.img}/>
+                            <img src={element.img} alt="images" />
                         </div>
                     ))}
                 </div>
