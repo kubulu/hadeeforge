@@ -15,7 +15,19 @@ export default function Navigation() {
                    </div>
 
                    <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                       <li><a href="#" className="nav-link px-4 link-secondary">Company</a></li>
+                       <li>
+
+                               <a className="nav-link px-4" href="#" role="button"
+                                  data-bs-toggle="dropdown" aria-expanded="false">
+                                   Company
+                               </a>
+
+                               <ul className="dropdown-menu">
+                                   <li><a className="dropdown-item" href="#">Quality</a></li>
+                                   <li><a className="dropdown-item" href="#">About Cold Forging</a></li>
+                                   <li><a className="dropdown-item" href="#">Quality</a></li>
+                               </ul>
+                           </li>
                        <li><a href="#" className="nav-link px-4">Products</a></li>
                        <li><a href="#" className="nav-link px-4">Facilities</a></li>
                        <li><a href="#" className="nav-link px-4">Careers</a></li>
