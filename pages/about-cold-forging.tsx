@@ -9,12 +9,13 @@ import AboutForgeContent from "../components/aboutForgeContent/aboutForgeContent
 import { ApiService } from '../services/api.service';
 
 export default function Page(props: any) {
+  console.log('Propss=',props);
   return (
       <div>
           <Navigation nav={props.nav[0].acf}/>
-          <InnerBannerSection banner={props.banner[0].acf} />
+          <InnerBannerSection banner={props.aboutForge[0].acf.banner} />
           <div className={`container`}>
-              <AboutForgeContent aboutForge={props.aboutForge[0].acf} />
+              <AboutForgeContent aboutForge={props.aboutForge[0].acf.about_content} />
           </div>
           <CertificateSection certificate={props.certificate[0].acf} />
 
@@ -32,8 +33,8 @@ export async function getServerSideProps() {
     const resFooter = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/footersection`);
     const footer = await resFooter.json();
 
-    const resInnerBanner = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/innerbannersection`);
-    const banner = await resInnerBanner.json();
+    // const resInnerBanner = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/innerbannersection`);
+    // const banner = await resInnerBanner.json();
 
     const resCertificate = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/certificatesection`);
     const certificate = await resCertificate.json();
@@ -43,7 +44,7 @@ export async function getServerSideProps() {
   
   
   if (nav && nav.length > 0) {
-    return {props: {nav, footer, banner, certificate, aboutForge}}
+    return {props: {nav, footer, certificate, aboutForge}}
   }
   else {
     return {props: {}}

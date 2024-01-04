@@ -11,16 +11,13 @@ export default function AboutSection(aboutSection: any) {
                 <div className={`row px-0 align-content-stretch`}>
                     <div className={`col-md-8`}>
                         <div className={styles.aboutCard}>
-                        {aboutSection.aboutSection.about_card.text_field.map((element: any, index: any)=>(
-                            <p key={index}> {element.text} </p>
-                        ))}
-                            <Link href={aboutSection.aboutSection.about_card.link} className={`btn btn-outline-light`}> {aboutSection.aboutSection.about_card.link_name} </Link>
-
+                        <div dangerouslySetInnerHTML={{ __html: aboutSection.aboutSection.about_card.text_field}}/>
+                            <Link href={aboutSection.aboutSection.about_card.button_link} className={`btn btn-outline-light`}> {aboutSection.aboutSection.about_card.button_name} </Link>
                         </div>
                     </div>
                     <div className={`col-md-4`}>
                         <div className={styles.aboutImg}>
-                            <img src={aboutSection.aboutSection.image} alt="about"/>
+                            <img src={aboutSection.aboutSection.img} alt="about"/>
                         </div>
                     </div>
                 </div>

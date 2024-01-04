@@ -11,14 +11,15 @@ import FooterSection from "../components/footerSection/footerSection";
 import { ApiService } from '../services/api.service';
 
 export default function Home(props: any) {
+  // console.log('PROPS==',props);
   return (
       <div>
           <Navigation nav={props.nav[0].acf}/>
-          <HeroSection hero={props.hero[0].acf} />
-          <AboutSection aboutSection={props.aboutSection[0].acf} />
-          <ServiceSection service={props.service[0].acf} />
-          <SectorSection sector={props.sector[0].acf} />
-          <ClientSection client={props.client[0].acf} />
+          <HeroSection hero={props.home[0].acf.banner} />
+          <AboutSection aboutSection={props.home[0].acf.about_section} />
+          <ServiceSection service={props.home[0].acf.service_banner} />
+          <SectorSection sector={props.home[0].acf.sector} />
+          <ClientSection client={props.home[0].acf.client} />
           <CertificateSection certificate={props.certificate[0].acf} />
           <FooterSection footer={props.footer[0].acf}/>
       </div>
@@ -33,27 +34,18 @@ export async function getServerSideProps() {
   const resFooter = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/footersection`);
   const footer = await resFooter.json(); 
 
-  const resHero = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/herosection`);
-  const hero = await resHero.json(); 
+  const resHome = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/homepagesection`);
+  const home = await resHome.json(); 
 
   const resAboutSection = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/aboutsection`);
   const aboutSection = await resAboutSection.json(); 
-
-  const resService = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/servicesection`);
-  const service = await resService.json(); 
-
-  const resSector = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/sectorsection`);
-  const sector = await resSector.json();
-
-  const resClient = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/clientsection`);
-  const client = await resClient.json();
 
   const resCertificate = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/certificatesection`);
   const certificate = await resCertificate.json();
 
 
 if (nav && nav.length > 0) {
-  return {props: {nav, footer, hero, aboutSection, service, sector, client, certificate}}
+  return {props: {nav, footer, home, aboutSection, certificate}}
 }
 else {
   return {props: {}}

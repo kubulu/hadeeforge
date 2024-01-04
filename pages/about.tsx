@@ -16,9 +16,9 @@ export default function Page(props: any) {
   return (
       <div>
           <Navigation nav={props.nav[0].acf}/>
-          <InnerBannerSection banner={props.banner[0].acf} />
+          <InnerBannerSection banner={props.about[0].acf.banner} />
           <div className={`container`}>
-              <AboutContent aboutContent={props.aboutContent[0].acf} />
+              <AboutContent aboutContent={props.about[0].acf.about_content} />
           </div>
           <CertificateSection certificate={props.certificate[0].acf} />
 
@@ -35,18 +35,15 @@ export async function getServerSideProps() {
     const resFooter = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/footersection`);
     const footer = await resFooter.json();
 
-    const resInnerBanner = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/innerbannersection`);
-    const banner = await resInnerBanner.json();
-
     const resCertificate = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/certificatesection`);
     const certificate = await resCertificate.json();
 
-    const resAboutContent = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/aboutcontentsection`);
-    const aboutContent = await resAboutContent.json();
+    const resAbout = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/aboutpagesection`);
+    const about = await resAbout.json();
   
   
   if (nav && nav.length > 0) {
-    return {props: {nav, footer, banner, certificate, aboutContent}}
+    return {props: {nav, footer, certificate, about}}
   }
   else {
     return {props: {}}

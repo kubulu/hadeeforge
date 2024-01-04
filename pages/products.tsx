@@ -10,7 +10,7 @@ export default function Page(props: any) {
   return (
       <div>
           <Navigation nav={props.nav[0].acf}/>
-          <InnerBannerSection banner={props.banner[0].acf} />
+          <InnerBannerSection banner={props.products[0].acf.banner} />
           <InnerProductSection products={props.products[0].acf} />
 
           <FooterSection footer={props.footer[0].acf} />
@@ -27,15 +27,12 @@ export async function getServerSideProps() {
   const resFooter = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/footersection`);
   const footer = await resFooter.json();
 
-  const resInnerBanner = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/innerbannersection`);
-  const banner = await resInnerBanner.json();
-
   const resProducts = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/productssection`);
   const products = await resProducts.json();
 
 
 if (nav && nav.length > 0) {
-  return {props: {nav, footer, banner, products}}
+  return {props: {nav, footer, products}}
 }
 else {
   return {props: {}}
