@@ -2,7 +2,8 @@ import React from "react";
 import styles from './aboutSection.module.scss'
 import Link from "next/link";
 
-export default function AboutSection() {
+export default function AboutSection(aboutSection: any) {
+    // console.log('AbtSec=',aboutSection);
 
     return (
        <div className="container-fluid">
@@ -10,16 +11,16 @@ export default function AboutSection() {
                 <div className={`row px-0 align-content-stretch`}>
                     <div className={`col-md-8`}>
                         <div className={styles.aboutCard}>
-                            <p>We are a precision cold forging company headquartered in Narasapura Industrial Area in Kolar. We currently serve customers from Automotive, Aerospace, Industrial and other general industries. We are one of the major aluminium cold forgings company in Bengaluru</p>
-                            <p><b>HADEE FORGINGS and GUNMA SEIKO CO., LTD. (Japan) have a technical support contract for forging, machining and quality.</b></p>
-                            <p>The unit is ISO 9001-2015 & IATF 16949 certified Company. We are approved by Maruthi Suzuki as a green channel supplier All our furnaces are calibrated as per CQI-9.</p>
-                            <Link href={`/`} class={`btn btn-outline-light`}>Read More</Link>
+                        {aboutSection.aboutSection.about_card.text_field.map((element: any, index: any)=>(
+                            <p key={index}> {element.text} </p>
+                        ))}
+                            <Link href={aboutSection.aboutSection.about_card.link} className={`btn btn-outline-light`}> {aboutSection.aboutSection.about_card.link_name} </Link>
 
                         </div>
                     </div>
                     <div className={`col-md-4`}>
                         <div className={styles.aboutImg}>
-                            <img src={`/images/about.png`}/>
+                            <img src={aboutSection.aboutSection.image} alt="about"/>
                         </div>
                     </div>
                 </div>

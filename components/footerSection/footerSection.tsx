@@ -1,9 +1,9 @@
 import React from "react";
-import Slider from "react-slick";
 import styles from './footerSection.module.scss';
 import Link from "next/link";
 
-export default function FooterSection() {
+export default function FooterSection(footer: any) {
+    // console.log('Footer=',footer);
 
         return (
             <div>
@@ -12,27 +12,25 @@ export default function FooterSection() {
                         <div className={`row px-0`}>
                         <div className={`col-md-6`}>
                             <div className={styles.footerContent}>
-                                <img src={`/images/logo.svg`} />
-                                <p className={`w-50 mt-4`}>We are committed to supply our customers with products of highest quality, timely delivery and effective customer service.</p>
+                                <img src={footer.footer.content.logo} alt="logo"/>
+                                <p className={`w-50 mt-4`}> {footer.footer.content.text} </p>
                             </div>
 
                         </div>
                         <div className={`col-md-3`}>
                             <div className={styles.footerMenu}>
                                 <ul>
-                                    <li>Company</li>
-                                    <li>Products</li>
-                                        <li>Facilities</li>
-                                        <li>Careers</li>
-                                        <li>Contact  </li>
+                                    {footer.footer.menu.map((element: any, index: any)=>(
+                                       <li key={index}> <a href={element.link}> {element.name} </a> </li> 
+                                    ))} 
                                 </ul>
                             </div>
                         </div>
                         <div className={`col-md-3`}>
                             <div className={styles.address}>
-                                <h3>Contact</h3>
-                                <p>Registered Office HaDee forgings private limited. No 28, Balaji complex, Hosur main road Bangalore – 560086.</p>
-                                <p>Email: sales@hadeeforge.in</p>
+                                <h3> {footer.footer.address.title} </h3>
+                                <p> {footer.footer.address.text}  </p>
+                                <p> {footer.footer.address.email}  </p>
                             </div>
                         </div>
                     </div>

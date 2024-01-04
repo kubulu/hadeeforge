@@ -1,7 +1,10 @@
 import React from "react";
 import styles from './heroSection.module.scss'
+import { url } from "inspector";
 
-export default function HeroSection() {
+export default function HeroSection(hero: any) {
+
+    // console.log('Banner=',hero);
 
     return (
        <div className="container-fluid">
@@ -15,48 +18,22 @@ export default function HeroSection() {
                                aria-label="Slide 3"></button>
                    </div>
                    <div className="carousel-inner">
-                       <div className="carousel-item active">
-                           <div className={`${styles.banner} ${styles.banner1}`}>
-                               <div className={`container`}>
-                                   <div className={`row`}>
-                                       <div className={`col-6`}>
-                                           <h5>Welcome to HaDee forgings</h5>
-                                           <h2>Providing Chip less Solutions to Autiance industries.</h2>
-                                           <button className={`btn btn-outline-light`}>Read more</button>
-                                       </div>
-                                       <div className={`col-6`}></div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       <div className="carousel-item">
-                           <div className={`${styles.banner} ${styles.banner2}`}>
-                           <div className={`container`}>
-                               <div className={`row`}>
-                                   <div className={`col-6`}>
-                                       <h5>Welcome to HaDee forgings</h5>
-                                       <h2>Providing Chip less Solutions to Automotive, Aerospace, Electricals & Domestic appliance industries.</h2>
-                                       <button className={`btn btn-outline-light`}>Read more</button>
-                                   </div>
-                                   <div className={`col-6`}></div>
-                               </div>
-                           </div>
-                           </div>
-                       </div>
-                       <div className="carousel-item">
-                           <div className={`${styles.banner} ${styles.banner3}`}>
-                           <div className={`container`}>
-                           <div className={`row`}>
-                               <div className={`col-6`}>
-                                   <h5>Welcome to HaDee forgings</h5>
-                                   <h2>Providing Chip less Solutions to Automotive, Aerospace, Electricals & Domestic appliance industries.</h2>
-                                   <button className={`btn btn-outline-light`}>Read more</button>
-                               </div>
-                               <div className={`col-6`}></div>
-                           </div>
-                           </div>
-                       </div>
-                       </div>
+                        {hero.hero.banner.map((element: any, index: any)=>(
+                            <div className="carousel-item active" style={{background: element.banner_color}} key={index}>
+                                <div className={`${styles.banner} ${styles.banner1}`} style={{backgroundImage: `url(${element.banner_img})`}}>
+                                    <div className={`container`}>
+                                        <div className={`row`}>
+                                            <div className={`col-6`}>
+                                                <h5> {element.banner_text} </h5>
+                                                <h2>{element.heading}</h2>
+                                                <button className={`btn btn-outline-light`}> {element.button} </button>
+                                            </div>
+                                            <div className={`col-6`}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                    </div>
                </div>
        </div>
