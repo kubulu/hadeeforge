@@ -2,7 +2,8 @@ import React from "react";
 import styles from './contactSection.module.scss'
 import Link from "next/link";
 
-export default function ContactSection() {
+export default function ContactSection(contact: any) {
+    // console.log('CONTACT=',contact);
 
     return (
         <div>
@@ -12,17 +13,18 @@ export default function ContactSection() {
                        <div className={`row align-items-center`}>
                            <div className={`col-md-4`}>
                                <p>Call us</p>
-                               <h1>+91 96201 43293</h1>
+                               <h1> {contact.contact.number} </h1>
                            </div>
                            <div className={`col-md-6`}>
                                <p>Email Address</p>
-                               <h1>sales@hadeeforge.in</h1>
+                               <h1> {contact.contact.mail_id} </h1>
                            </div>
                            <div className={`col-md-2`}>
-
-                               <h1 className={`d-flex justify-content-between align-items-center`}><i className="bi bi-facebook"></i> <i className="bi bi-instagram"></i> <i
-                                   className="bi bi-twitter-x"></i> <i className="bi bi-youtube"></i>
-
+                               <h1 className={`d-flex justify-content-between align-items-center`}>
+                                    <a href={contact.contact.social_media.fb_link} className="bi bi-facebook"></a> 
+                                    <a href={contact.contact.social_media.instagram_link} className="bi bi-instagram"></a>
+                                    <a href={contact.contact.social_media.twitter_link} className="bi bi-twitter-x"></a>
+                                    <a href={contact.contact.social_media.youtube_link} className="bi bi-youtube"></a>
                                </h1>
                            </div>
                        </div>
@@ -32,15 +34,18 @@ export default function ContactSection() {
                            <div className={`row`}>
                                <div className={`col-md-6`}>
                                    <div className={styles.addressCard}>
+                                    {contact.contact.address.map((element: any, index: any)=>(
                                        <div className={styles.address}>
-                                           <h2>Registered Office</h2>
-                                           <p>HaDee forgings private limited. No 28, Balaji complex, Hosur main road Bangalore – 560086.</p>
+                                           <h2> {element.title} </h2>
+                                           <p> {element.address} </p>
+                                           <div className={styles.border}></div>
                                        </div>
-                                       <div className={styles.border}></div>
-                                       <div className={styles.address}>
+                                       ))}
+                                       
+                                       {/* <div className={styles.address}>
                                            <h2>Works</h2>
                                            <p>No. 47/48, Jakkasandra Village, Jakkasandra Ind Area, Malur Taluk, Kolar district, Karnataka – 563130.</p>
-                                       </div>
+                                       </div> */}
                                    </div>
                                </div>
                                <div className={`col-md-6`}>
@@ -49,8 +54,7 @@ export default function ContactSection() {
                                            <h2>Write to us</h2>
                                            <div className={styles.form}>
                                                <div className="mb-3">
-                                                   <label  className="form-label">Email
-                                                       address</label>
+                                                   <label  className="form-label">Name</label>
                                                    <input type="email" className="form-control" placeholder="Full Name" />
                                                </div>
                                                <div className="mb-3">

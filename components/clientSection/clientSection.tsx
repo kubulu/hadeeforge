@@ -1,7 +1,7 @@
 import React from 'react';
-import Slider from 'react-slick';
 import styles from './clientSection.module.scss';
-export default function ClientSection() {
+export default function ClientSection(client: any) {
+    // console.log('Client==',client);
         const settings = {
             dots: true,
             infinite: true,
@@ -35,16 +35,11 @@ export default function ClientSection() {
                 {/*    </div>*/}
                 {/*</Slider>*/}
                 <div className={styles.imageScroll}>
-                    <div className={styles.img}><img src={`/images/image 2.png`}/></div>
-                    <div className={styles.img}><img src={`/images/image 3.png`}/></div>
-                    <div className={styles.img}><img src={`/images/image 4.png`}/></div>
-                    <div className={styles.img}><img src={`/images/image 5.png`}/></div>
-                    <div className={styles.img}><img src={`/images/image 6.png`}/></div>
-                    <div className={styles.img}><img src={`/images/image 11.png`}/></div>
-                    <div className={styles.img}><img src={`/images/image 12.png`}/></div>
-                    <div className={styles.img}><img src={`/images/image 4.png`}/></div>
-                    <div className={styles.img}><img src={`/images/image 5.png`}/></div>
-
+                    {client.client.client.map((element: any, index: any)=>(
+                        <div className={styles.img} key={index}>
+                            <img src={element.img}/>
+                        </div>
+                    ))}
                 </div>
             </div>
         );

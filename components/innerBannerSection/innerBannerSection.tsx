@@ -2,7 +2,7 @@ import React from "react";
 import styles from './innerBannerSection.module.scss'
 import Link from "next/link";
 
-export default function InnerBannerSection() {
+export default function InnerBannerSection(banner: any) {
 
     return (
        <div className="container-fluid">
@@ -10,8 +10,8 @@ export default function InnerBannerSection() {
                 <div className={`row px-0 align-content-center`}>
                     <div className={`col-8`}>
                         <div className={styles.bannerContent}>
-                                <p>About Company</p>
-                                <h2>Poviding “Chipless Solutions” to Automobile, Electrical & Domestic Appliance industries.</h2>
+                                <p>{banner.banner.text}</p>
+                                <h2> {banner.banner.heading} </h2>
                         </div>
                     </div>
                 </div>

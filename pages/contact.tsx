@@ -3,7 +3,7 @@ import React from "react";
 import Navigation from "../components/navigation/navigation";
 import FooterSection from "../components/footerSection/footerSection";
 import InnerBannerSection from "../components/innerBannerSection/innerBannerSection";
-import FacilitySection from "../components/facilitieSection/facilitySection";
+import ContactSection from "../components/contactSection/contactSection";
 import { ApiService } from '../services/api.service';
 
 export default function Page(props: any) {
@@ -11,7 +11,7 @@ export default function Page(props: any) {
       <div>
           <Navigation nav={props.nav[0].acf}/>
           <InnerBannerSection banner={props.banner[0].acf} />
-          <FacilitySection facility={props.facility[0].acf} />
+          <ContactSection contact={props.contact[0].acf} />
 
           <FooterSection footer={props.footer[0].acf} />
       </div>
@@ -29,12 +29,11 @@ export async function getServerSideProps() {
   const resInnerBanner = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/innerbannersection`);
   const banner = await resInnerBanner.json();
 
-  const resFacility = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/facilitiessection`);
-  const facility = await resFacility.json();
-
+  const resContact = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/contactsection`);
+  const contact = await resContact.json();
 
 if (nav && nav.length > 0) {
-  return {props: {nav, footer, banner, facility}}
+  return {props: {nav, footer, banner, contact}}
 }
 else {
   return {props: {}}

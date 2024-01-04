@@ -2,7 +2,8 @@ import React from "react";
 import styles from './innerProductSection.module.scss'
 import Link from "next/link";
 
-export default function InnerProductSection() {
+export default function InnerProductSection(products: any) {
+    console.log('PRODUCT=',products);
 
     return (
        <div className="container-fluid">
@@ -10,40 +11,24 @@ export default function InnerProductSection() {
                 <div className={`row px-0 align-content-center`}>
                     <div className={`col-6`}>
                         <div className={styles.bannerContent}>
-                                <p>Products</p>
-                                <h2>Sales by Industry Segments</h2>
+                                <p> {products.products.text} </p>
+                                <h2> {products.products.title} </h2>
                         </div>
                     </div>
                     <div className={`col-6`}>
-                        <img src={`/images/sales-cart.png`} />
+                        <img src={products.products.img} />
                     </div>
                 </div>
 
                <div className={`row`}>
+                {products.products.card.map((element: any, index: any)=>(
                    <div className={`col-md-3`}>
-                       <div className={styles.serviceCard}>
-                           <h2>Automobile Parts</h2>
-                           <Link href={`/`}><img src={`/images/more.svg`} /> </Link>
+                       <div className={styles.serviceCard} key={index}>
+                           <h2> {element.title} </h2>
+                           <Link href={element.link}><img src={`/images/more.svg`} /> </Link>
                        </div>
                    </div>
-                   <div className={`col-md-3`}>
-                       <div className={styles.serviceCard}>
-                           <h2>Aerospace Parts</h2>
-                           <Link href={`/`}><img src={`/images/more.svg`} /> </Link>
-                       </div>
-                   </div>
-                   <div className={`col-md-3`}>
-                       <div className={styles.serviceCard}>
-                           <h2>Locomotive Parts</h2>
-                           <Link href={`/`}><img src={`/images/more.svg`} /> </Link>
-                       </div>
-                   </div>
-                   <div className={`col-md-3`}>
-                       <div className={styles.serviceCard}>
-                           <h2>Others Parts</h2>
-                           <Link href={`/`}><img src={`/images/more.svg`} /> </Link>
-                       </div>
-                   </div>
+                   ))}
                </div>
 
            </div>
