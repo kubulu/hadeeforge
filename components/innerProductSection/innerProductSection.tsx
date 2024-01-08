@@ -3,7 +3,7 @@ import styles from './innerProductSection.module.scss'
 import Link from "next/link";
 
 export default function InnerProductSection(products: any) {
-    console.log('PRODUCT=',products);
+   
 
     return (
        <div className="container-fluid">

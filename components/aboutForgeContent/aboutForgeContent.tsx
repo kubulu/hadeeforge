@@ -3,7 +3,6 @@ import styles from './aboutForgeContent.module.scss'
 import Link from "next/link";
 
 export default function AboutForgeContent(aboutForge: any) {
-    console.log('AbtForge==',aboutForge);
 
     return (
        <div className="container-fluid">

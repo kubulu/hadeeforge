@@ -3,8 +3,6 @@ import styles from './aboutContent.module.scss'
 import Link from "next/link";
 
 export default function AboutContent(aboutContent: any) {
-    console.log('ABTcont==',aboutContent);
-
     return (
        <div className="container-fluid">
            <div className={styles.aboutContent}>
