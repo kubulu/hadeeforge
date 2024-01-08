@@ -3,7 +3,7 @@ import styles from './sectorSection.module.scss'
 import Link from "next/link";
 
 export default function SectorSection(sector: any) {
-    console.log('Secc=',sector);
+   
 
     return (
        <div className={`container-fluid`}>

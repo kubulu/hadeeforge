@@ -3,7 +3,7 @@ import styles from './facilitySection.module.scss'
 import Link from "next/link";
 
 export default function FacilitySection(facility: any) {
-    console.log('Facility==',facility);
+  
 
     return (
        <div className="container-fluid">

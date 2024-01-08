@@ -2,7 +2,7 @@ import React from "react";
 import styles from './serviceSection.module.scss'
 
 export default function ServiceSection(service: any) {
-    // console.log('Serv=',service);
+  
 
     return (
         <div className="container-fluid" style={{marginTop: '40px',}}>

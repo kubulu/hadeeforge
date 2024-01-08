@@ -3,7 +3,7 @@ import styles from './qualitySection.module.scss'
 import Link from "next/link";
 
 export default function QualitySection(quality: any) {
-    console.log('QUALITY==',quality);
+   
 
     return (
        <div className="container-fluid">
