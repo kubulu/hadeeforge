@@ -37,15 +37,12 @@ export async function getServerSideProps() {
   const resHome = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/homepagesection`);
   const home = await resHome.json(); 
 
-  const resAboutSection = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/aboutsection`);
-  const aboutSection = await resAboutSection.json(); 
-
   const resCertificate = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/certificatesection`);
   const certificate = await resCertificate.json();
 
 
 if (nav && nav.length > 0) {
-  return {props: {nav, footer, home, aboutSection, certificate}}
+  return {props: {nav, footer, home, certificate}}
 }
 else {
   return {props: {}}
