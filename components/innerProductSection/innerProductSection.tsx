@@ -3,7 +3,7 @@ import styles from './innerProductSection.module.scss'
 import Link from "next/link";
 
 export default function InnerProductSection(products: any) {
-    console.log('PRODUCT=',products);
+   
 
     return (
        <div className="container-fluid">
@@ -11,8 +11,7 @@ export default function InnerProductSection(products: any) {
                 <div className={`row px-0 align-content-center`}>
                     <div className={`col-6`}>
                         <div className={styles.bannerContent}>
-                                <p> {products.products.text} </p>
-                                <h2> {products.products.title} </h2>
+                               <div dangerouslySetInnerHTML={{ __html: products.products.text_field }} />
                         </div>
                     </div>
                     <div className={`col-6`}>

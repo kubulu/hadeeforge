@@ -18,15 +18,14 @@ export default function HeroSection(hero: any) {
                                aria-label="Slide 3"></button>
                    </div>
                    <div className="carousel-inner">
-                        {hero.hero.banner.map((element: any, index: any)=>(
-                            <div className="carousel-item active" style={{background: element.banner_color}} key={index}>
-                                <div className={`${styles.banner} ${styles.banner1}`} style={{backgroundImage: `url(${element.banner_img})`}}>
+                        {hero.hero.map((element: any, index: any)=>(
+                            <div className="carousel-item active" style={{background: element.color}} key={index}>
+                                <div className={`${styles.banner} ${styles.banner1}`} style={{backgroundImage: `url(${element.img})`}}>
                                     <div className={`container`}>
                                         <div className={`row`}>
                                             <div className={`col-6`}>
-                                                <h5> {element.banner_text} </h5>
-                                                <h2>{element.heading}</h2>
-                                                <button className={`btn btn-outline-light`}> {element.button} </button>
+                                                <div dangerouslySetInnerHTML={{ __html: element.text }} />
+                                                <button className={`btn btn-outline-light`}> {element.button_name} </button>
                                             </div>
                                             <div className={`col-6`}></div>
                                         </div>

@@ -3,7 +3,7 @@ import styles from './qualitySection.module.scss'
 import Link from "next/link";
 
 export default function QualitySection(quality: any) {
-    console.log('QUALITY==',quality);
+   
 
     return (
        <div className="container-fluid">
@@ -11,18 +11,13 @@ export default function QualitySection(quality: any) {
                <div className={`container`}>
                     <div className={`row`}>
                         <div className={`col-md-12`}>
-                            <h2> {quality.quality.quality.title} </h2>
-                            <p> {quality.quality.quality.content} </p>
+                            <h2> {quality.quality.title} </h2>
+                            <p> {quality.quality.text} </p>
                         </div>
                     </div>
                    <div className={`row`}>
                        <div className={`col-md-6`}>
-                           <h3> {quality.quality.title} </h3>
-                           <ul>
-                                {quality.quality.list.map((element: any, index: any)=>(
-                                <li key={index}> {element.name} </li>
-                                ))}  
-                           </ul>
+                           <div dangerouslySetInnerHTML={{ __html: quality.quality.text_list }} />
                        </div>
                        <div className={`col-md-6`}>
                            <img src={quality.quality.img} width={`100%`} alt="image"/>

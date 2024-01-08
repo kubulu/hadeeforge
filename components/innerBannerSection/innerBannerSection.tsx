@@ -10,8 +10,7 @@ export default function InnerBannerSection(banner: any) {
                 <div className={`row px-0 align-content-center`}>
                     <div className={`col-8`}>
                         <div className={styles.bannerContent}>
-                                <p>{banner.banner.text}</p>
-                                <h2> {banner.banner.heading} </h2>
+                               <div dangerouslySetInnerHTML={{ __html: banner.banner }}/>
                         </div>
                     </div>
                 </div>

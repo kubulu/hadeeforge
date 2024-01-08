@@ -3,13 +3,13 @@ import styles from './facilitySection.module.scss'
 import Link from "next/link";
 
 export default function FacilitySection(facility: any) {
-    console.log('Facility==',facility);
+  
 
     return (
        <div className="container-fluid">
            <div className={styles.facilitieSection}>
                <div className={`container`}>
-                {facility.facility.facility.map((element: any, index: any)=>(
+                {facility.facility.map((element: any, index: any)=>(
                    <div className={`row justify-content-center align-content-center`} key={index}>
                        <div className={`col-md-12 py-5`}>
                            <div className={(index % 2) == 0 ?`row justify-content-center align-items-center`: `row justify-content-center align-items-center flex-row-reverse`}>

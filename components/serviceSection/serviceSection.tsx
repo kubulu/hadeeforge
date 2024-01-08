@@ -2,7 +2,7 @@ import React from "react";
 import styles from './serviceSection.module.scss'
 
 export default function ServiceSection(service: any) {
-    // console.log('Serv=',service);
+  
 
     return (
         <div className="container-fluid" style={{marginTop: '40px',}}>
@@ -16,14 +16,13 @@ export default function ServiceSection(service: any) {
                             aria-label="Slide 3"></button>
                 </div>
                 <div className="carousel-inner">
-                    {service.service.service.map((element: any, index: any)=>(
+                    {service.service.map((element: any, index: any)=>(
                         <div className="carousel-item active" style={{background: element.color}} key={index}>
                             <div className={`${styles.banner} ${styles.banner1}`} style={{backgroundImage: `url(${element.img})`}}>
                                 <div className={`container`}>
                                     <div className={`row`}>
                                         <div className={`col-6`}>
-                                            <h5> {element.text} </h5>
-                                            <h2> {element.heading} </h2>
+                                        <div dangerouslySetInnerHTML={{ __html: element.text }} />
                                             <button className={`btn btn-outline-light`}> {element.button_name} </button>
                                         </div>
                                         <div className={`col-6`}></div>
