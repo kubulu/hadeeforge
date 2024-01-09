@@ -16,8 +16,9 @@
 }
 
 .banner1{ 
-  background-repeat: no-repeat;
-  background-position: right;
+  background-repeat: no-repeat !important;
+  background-position: right !important;
+  border-radius: 20px;
   img{
     width: 100%;
   }

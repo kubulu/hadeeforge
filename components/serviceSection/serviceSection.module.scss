@@ -17,6 +17,7 @@
 }
 
 .banner1{
-  background-repeat: no-repeat;
-  background-position: right;
+  background-repeat: no-repeat !important;
+  background-position: right !important;
+  background-size: cover !important;
 }

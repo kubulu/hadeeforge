@@ -19,8 +19,8 @@ export default function HeroSection(hero: any) {
                    </div>
                    <div className="carousel-inner">
                         {hero.hero.map((element: any, index: any)=>(
-                            <div className="carousel-item active" style={{background: element.color}} key={index}>
-                                <div className={`${styles.banner} ${styles.banner1}`} style={{backgroundImage: `url(${element.img})`}}>
+                            <div className="carousel-item active"  key={index}>
+                                <div className={`${styles.banner} ${styles.banner1}`} style={{background: `url(${element.img})`, backgroundColor: element.color}}>
                                     <div className={`container`}>
                                         <div className={`row`}>
                                             <div className={`col-6`}>
