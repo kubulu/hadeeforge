@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import styles from './navigation.module.scss'
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function Navigation(nav: any) {
@@ -27,11 +25,7 @@ const handleDropdownClose = () => {
                             <img src={nav.nav.logo.logo_img} alt="logo"/>
                        </a>
                    </div>
-<<<<<<< HEAD
-                {nav.nav.nav_item.map((element: any, index: any)=>(
-                   <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                       <li key={index}> <a href={element.list_item.link} className="nav-link px-4 link-secondary"> {element.list_item.name} </a></li>
-=======
+
                 {nav.nav.nav_item?.map((element: any, index: any)=>(
                    <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" key={index}>
                        <li>
@@ -52,7 +46,6 @@ const handleDropdownClose = () => {
 
                         }
                         </li>
->>>>>>> 2a3ed02 (changes)
                    </ul>
                  ))}
                    <div className="col-md-3 text-end">

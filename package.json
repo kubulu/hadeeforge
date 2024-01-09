@@ -13,11 +13,8 @@
     "bootstrap-icons": "^1.11.2",
     "next": "14.0.4",
     "react": "^18",
-<<<<<<< HEAD
-=======
     "react-axios": "^2.0.6",
     "react-bootstrap": "^2.9.2",
->>>>>>> 2a3ed02 (changes)
     "react-dom": "^18",
     "react-infinite-scroll-component": "^6.1.0",
     "react-slick": "^0.29.0",
