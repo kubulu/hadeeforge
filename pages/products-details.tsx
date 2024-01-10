@@ -3,15 +3,15 @@ import React from "react";
 import Navigation from "../components/navigation/navigation";
 import FooterSection from "../components/footerSection/footerSection";
 import InnerBannerSection from "../components/innerBannerSection/innerBannerSection";
-import InnerProductSection from "../components/innerProductSection/innerProductSection";
 import { ApiService } from '../services/api.service';
+import ProductDetailsSection from "../components/productDetailSection/productDetailsSection";
 
 export default function Page(props: any) {
   return (
       <div>
           <Navigation nav={props.nav[0].acf}/>
           <InnerBannerSection banner={props.products[0].acf.banner} />
-          <InnerProductSection products={props.products[0].acf} />
+          <ProductDetailsSection/>
           <FooterSection footer={props.footer[0].acf} />
       </div>
   )
