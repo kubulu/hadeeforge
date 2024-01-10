@@ -10,9 +10,9 @@ export default function Page(props: any) {
   return (
       <div>
           <Navigation nav={props.nav[0].acf}/>
-          <InnerBannerSection banner={props.about[0].acf.banner} />
+          <InnerBannerSection banner={props.career[0].acf.banner} />
           <div className={`container`}>
-            <CareersCard/>
+            <CareersCard career={props.career[0].acf} />
           </div>
           <FooterSection footer={props.footer[0].acf} />
       </div>
@@ -30,12 +30,12 @@ export async function getServerSideProps() {
     const resCertificate = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/certificatesection`);
     const certificate = await resCertificate.json();
 
-    const resAbout = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/aboutpagesection`);
-    const about = await resAbout.json();
+    const resCareer = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/careerspagesection`);
+    const career = await resCareer.json();
   
   
   if (nav && nav.length > 0) {
-    return {props: {nav, footer, certificate, about}}
+    return {props: {nav, footer, certificate, career}}
   }
   else {
     return {props: {}}
