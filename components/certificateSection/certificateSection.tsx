@@ -9,7 +9,7 @@ export default function CertificateSection(certificate: any) {
         return (
             <div>
                 <div className={styles.certificate}>
-                    <div className={`row px-0`}>
+                    <div className={`row px-0 mx-0`}>
                         <div className={`col-md-6`}>
                             <div className={styles.certificateCard}>
                                 <h3> {certificate.certificate.title} </h3>
