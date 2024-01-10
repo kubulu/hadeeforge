@@ -57,8 +57,7 @@ export default function ContactSection(contact: any) {
                                                    <input type="email" className="form-control" placeholder="Mobile Number" />
                                                </div>
                                                <div className="mb-3">
-                                                   <label className="form-label">Email
-                                                       address</label>
+                                                   <label className="form-label">Email address</label>
                                                    <input type="email" className="form-control" placeholder="Email Address" />
                                                </div>
                                                <div className="mb-3">
