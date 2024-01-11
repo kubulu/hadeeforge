@@ -7,13 +7,29 @@
   animation: slideLeft 60s linear infinite;
   backface-visibility: hidden;
   overflow: hidden;
-  .img{
-    width: 200px;
-  }
+
 
   .image {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+  }
+}
+
+.clients{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  .img{
+    width: 200px;
+    height: 100px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.clientsText{
+  h2{
+    font-weight: 600;
   }
 }

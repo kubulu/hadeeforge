@@ -20,9 +20,6 @@ export default function CertificateSection(certificate: any) {
                             <div className={styles.certificateImg}>
                                <img src={certificate.certificate.img} alt="certificate"/>
                             </div>
-                            <div className={styles.certificateImg}>
-                                <img src={certificate.certificate.img} alt="certificate"/>
-                            </div>
                     </div>
                 </div>
             </div>
