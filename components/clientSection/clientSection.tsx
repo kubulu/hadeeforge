@@ -17,7 +17,7 @@ export default function ClientSection(client: any) {
         return (
             <div className={`container-fluid`}>
                 <div className={`row`}>
-                    <div className={`col-12 text-center pt-5`}>'
+                    <div className={`col-12 text-center pt-5`}>
                         <div className={styles.clientsText}>
                             <h2>Featured Customer</h2>
                         </div>
@@ -27,7 +27,7 @@ export default function ClientSection(client: any) {
                 <Slider {...settings}>
                     {client.client.map((element: any, index: any)=>(
                         <div className={styles.img} key={index}>
-                            <img src={element.img} alt="images" />
+                            <img src="${}" alt="images" />
                         </div>
                     ))}
                 </Slider>

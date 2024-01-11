@@ -78,7 +78,7 @@ export default function ContactSection(contact: any) {
             <div className={styles.map}>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1943.0793362113297!2d77.9697778!3d13.0891285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3badfd265a98af53%3A0x364d8e4d240cfde8!2sHaDee%20Forgings%20Pvt.Ltd!5e0!3m2!1sen!2sin!4v1704974521739!5m2!1sen!2sin"
-                    width="100%" height="450"  allowFullScreen="" loading="lazy"
+                    width="100%" height="450"  loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
