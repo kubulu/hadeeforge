@@ -7,11 +7,12 @@ import { ApiService } from '../services/api.service';
 import ProductDetailsSection from "../components/productDetailSection/productDetailsSection";
 
 export default function Page(props: any) {
+  // console.log('PDetails==',props);
   return (
       <div>
           <Navigation nav={props.nav[0].acf}/>
-          <InnerBannerSection banner={props.products[0].acf.banner} />
-          <ProductDetailsSection/>
+          <InnerBannerSection banner={props.productsDetails[0].acf.banner} />
+          <ProductDetailsSection productsDetails={props.productsDetails[0].acf} />
           <FooterSection footer={props.footer[0].acf} />
       </div>
   )
@@ -26,12 +27,12 @@ export async function getServerSideProps() {
   const resFooter = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/footersection`);
   const footer = await resFooter.json();
 
-  const resProducts = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/productssection`);
-  const products = await resProducts.json();
+  const resProductsDetails = await fetch(baseUrl.getBaseUrl() + `wp-json/acf/v3/productsdetails`);
+  const productsDetails = await resProductsDetails.json();
 
 
 if (nav && nav.length > 0) {
-  return {props: {nav, footer, products}}
+  return {props: {nav, footer, productsDetails}}
 }
 else {
   return {props: {}}

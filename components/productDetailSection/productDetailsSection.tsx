@@ -2,14 +2,15 @@ import React from "react";
 import styles from './productDetailsSection.module.scss'
 
 
-export default function ProductDetailsSection() {
+export default function ProductDetailsSection(productsDetails: any) {
+    console.log('pd==',productsDetails);
     return (
       <div className={styles.proDetails}>
           <div className={`container`}>
               <div className={`row`}>
                   <div className={`col-12`}>
                       <div className={styles.proHeadingText}>
-                          <h3>The Inner Ball Joint (IBJ) Housing is a safety-critical component of the axial joint that transmits steering loads through the tie rod and the outer joint to the front wheels</h3>
+                          <h3> {productsDetails.productsDetails.heading_text} </h3>
                       </div>
                   </div>
               </div>
@@ -38,80 +39,54 @@ export default function ProductDetailsSection() {
                   </ul>
                   <div className="tab-content" id="myTabContent">
                       <div className="tab-pane fade show active" id="automotive" role="tabpanel" aria-labelledby="automotive-tab">
-
+                        
                           <div className={`row mt-5`}>
-                              <div className={`col-md-2`}>
+                          {productsDetails.productsDetails.automotive_parts.map((element: any, index: any)=>(
+                              <div className={`col-md-2`} key={index}>
                                   <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
+                                      <img src={element.img} />
                                   </div>
+                                  
                               </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
+                              ))}
                           </div>
-                          <div className={`row mt-5`}>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                              <div className={`col-md-2`}>
-                                  <div className={styles.proImg}>
-                                      <img src={`/images/tool-1.png`} />
-                                  </div>
-                              </div>
-                          </div>
-
-
                       </div>
                       <div className="tab-pane fade" id="aerospace" role="tabpanel" aria-labelledby="aerospace-tab">
-
-                          Aerospace....
+                        <div className={`row mt-5`}>
+                            {productsDetails.productsDetails.aerospace_parts.map((element: any, index: any)=>(
+                                <div className={`col-md-2`} key={index}>
+                                    <div className={styles.proImg}>
+                                        <img src={element.img} />
+                                    </div>
+                                    
+                                </div>
+                                ))}
+                        </div>
                       </div>
-                      <div className="tab-pane fade" id="locomotive" role="tabpanel" aria-labelledby="locomotive-tab">Locomotive...</div>
-                      <div className="tab-pane fade" id="others" role="tabpanel" aria-labelledby="others-tab">Others...</div>
+                      <div className="tab-pane fade" id="locomotive" role="tabpanel" aria-labelledby="locomotive-tab">
+                        <div className={`row mt-5`}>
+                            {productsDetails.productsDetails.locomotive_parts.map((element: any, index: any)=>(
+                                <div className={`col-md-2`} key={index}>
+                                    <div className={styles.proImg}>
+                                        <img src={element.img} />
+                                    </div>
+                                    
+                                </div>
+                                ))}
+                        </div>
+                      </div>
+                      <div className="tab-pane fade" id="others" role="tabpanel" aria-labelledby="others-tab">
+                        <div className={`row mt-5`}>
+                                {productsDetails.productsDetails.others.map((element: any, index: any)=>(
+                                    <div className={`col-md-2`} key={index}>
+                                        <div className={styles.proImg}>
+                                            <img src={element.img} />
+                                        </div>
+                                        
+                                    </div>
+                                    ))}
+                            </div>
+                      </div>
                   </div>
 
               </div>
