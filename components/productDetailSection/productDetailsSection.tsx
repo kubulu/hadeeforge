@@ -3,7 +3,7 @@ import styles from './productDetailsSection.module.scss'
 
 
 export default function ProductDetailsSection(productsDetails: any) {
-    console.log('pd==',productsDetails);
+    // console.log('pd==',productsDetails);
     return (
       <div className={styles.proDetails}>
           <div className={`container`}>
