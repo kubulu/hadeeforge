@@ -27,7 +27,7 @@ export default function ClientSection(client: any) {
                 <Slider {...settings}>
                     {client.client.map((element: any, index: any)=>(
                         <div className={styles.img} key={index}>
-                            <img src="${}" alt="images" />
+                            <img src={element.img}" alt="images" />
                         </div>
                     ))}
                 </Slider>
