@@ -1,6 +1,7 @@
+"use client";
 import React, {useState} from "react";
 import styles from './navigation.module.scss'
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavDropdown } from 'react-bootstrap';
 
 export default function Navigation(nav: any) {
 console.log('NAV=',nav);

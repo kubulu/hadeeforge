@@ -8,8 +8,8 @@ export default function CareersCard(career: any) {
       <div>
           <div className={`row`}>
                 {career.career.job_card.map((element: any, index: any)=>(
-                    <div className={`col-md-6`}>  
-                            <div className={styles.jobCards} key={index}>
+                    <div className={`col-md-6`} key={index}>  
+                            <div className={styles.jobCards}>
                                 <div className={styles.jobContent}>
                                     <div dangerouslySetInnerHTML={{ __html: element.content }} />
                                 </div>
