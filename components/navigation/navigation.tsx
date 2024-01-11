@@ -34,7 +34,7 @@ const handleDropdownClose = () => {
 
                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
                        {nav.nav.nav_item?.map((element: any, index: any)=>(
-                           <ul className="navbar-nav mx-auto mb-2 mb-lg-0" key={index} >
+                           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold" key={index} >
                            <li>
                                {/* <a href={element.list_item.link} className="nav-link px-4 link-secondary"> {element.list_item.name} </a> */}
                                {element.list_item.sub_menu ?

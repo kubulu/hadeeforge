@@ -20,7 +20,9 @@ export default function QualitySection(quality: any) {
                            <div dangerouslySetInnerHTML={{ __html: quality.quality.text_list }} />
                        </div>
                        <div className={`col-md-6`}>
-                           <img src={quality.quality.img} width={`100%`} alt="image"/>
+                           <div className={styles.qualityImg}>
+                                <img src={quality.quality.img} width={`100%`} alt="image"/>
+                           </div>
                        </div>
                    </div>
                </div>
