@@ -15,7 +15,7 @@ export default function QualitySection(quality: any) {
                             <p> {quality.quality.text} </p>
                         </div>
                     </div>
-                   <div className={`row`}>
+                   <div className={`row justify-content-center align-items-center`}>
                        <div className={`col-md-6`}>
                            <div dangerouslySetInnerHTML={{ __html: quality.quality.text_list }} />
                        </div>
