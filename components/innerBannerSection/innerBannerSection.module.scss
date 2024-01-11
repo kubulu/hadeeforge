@@ -7,9 +7,18 @@
   color: #ffffff;
   width: 100%;
   background: linear-gradient(180deg, #0A4A95 0%, #3589EB 100%);
+  @media (max-width: 575.98px) {
+    height: 100%;
+    min-height: auto;
+    padding: 20px;
+  }
   .bannerContent{
     h2{
       font-size: 46px;
+      @media (max-width: 575.98px) {
+        font-size: 24px;
+      }
+
     }
   }
 }

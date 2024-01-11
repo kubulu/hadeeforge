@@ -2,6 +2,9 @@
   border-radius: 20px;
   width: 100%;
   padding: 20px 60px;
+  @media (max-width: 575.98px) {
+    padding: 20px 20px;
+  }
   //background: #efefef;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -16,6 +19,9 @@
 .addressCard{
   h2{
     font-weight: 600;
+    @media (max-width: 575.98px) {
+      font-size: 18px;
+    }
   }
   padding: 40px;
   background: linear-gradient(180deg, #ebf4ff 0%, #e7f2ff 100%);
@@ -23,14 +29,21 @@
   height: 100%;
   width: 100%;
   padding: 60px 60px;
+  @media (max-width: 575.98px) {
+    padding: 20px 20px;
+  }
+
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
+  justify-content: space-around;
   .address{
     p{
       font-size: 20px;
-      font-weight: 600;
       padding-right: 140px;
+      @media (max-width: 575.98px) {
+        padding-right: 0px;
+        font-size: 16px;
+      }
     }
   }
 }

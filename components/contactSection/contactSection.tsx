@@ -11,15 +11,15 @@ export default function ContactSection(contact: any) {
                <div className="container">
                    <div className={styles.contactHead}>
                        <div className={`row align-items-center`}>
-                           <div className={`col-md-4`}>
+                           <div className={`col-md-4 py-4`}>
                                <p>Call us</p>
                                <h1> {contact.contact.number} </h1>
                            </div>
-                           <div className={`col-md-6`}>
+                           <div className={`col-md-6  py-4`}>
                                <p>Email Address</p>
                                <h1> {contact.contact.mail_id} </h1>
                            </div>
-                           <div className={`col-md-2`}>
+                           <div className={`col-md-2  py-4`}>
                                <h1 className={`d-flex justify-content-between align-items-center`}>
                                     <Link href={contact.contact.social_media.fb_link} className="bi bi-facebook"></Link> 
                                     <Link href={contact.contact.social_media.instagram_link} className="bi bi-instagram"></Link>
@@ -32,7 +32,7 @@ export default function ContactSection(contact: any) {
                    <div className={styles.contactSection}>
                        <div className={`container`}>
                            <div className={`row`}>
-                               <div className={`col-md-6`}>
+                               <div className={`col-md-6 py-2`}>
                                    <div className={styles.addressCard}>
                                     {contact.contact.address.map((element: any, index: any)=>(
                                        <div className={styles.address} key={index}>
@@ -43,7 +43,7 @@ export default function ContactSection(contact: any) {
                                        ))}
                                    </div>
                                </div>
-                               <div className={`col-md-6`}>
+                               <div className={`col-md-6 py-2`}>
                                    <div className={styles.addressCard}>
                                        <div className={styles.address}>
                                            <h2>Write to us</h2>
