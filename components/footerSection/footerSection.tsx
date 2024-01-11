@@ -28,9 +28,7 @@ export default function FooterSection(footer: any) {
                         </div>
                         <div className={`col-md-3`}>
                             <div className={styles.address}>
-                                <h3> {footer.footer.address.title} </h3>
-                                <p> {footer.footer.address.text}  </p>
-                                <p> {footer.footer.address.email}  </p>
+                            <div dangerouslySetInnerHTML={{ __html: footer.footer.address }} />
                             </div>
                         </div>
                     </div>
