@@ -1,6 +1,8 @@
 .footer{
   padding-top: 90px;
   padding-bottom: 10px;
+  background: #020c17;
+  color: #6d7989;
   @media (max-width: 575.98px) {
     text-align: center;
   }
@@ -20,7 +22,7 @@
     }
     a{
       text-decoration: none;
-      color: black;
+      color: #6d7989;
     }
   }
 }

@@ -19,28 +19,22 @@ export default function HeroSection(hero: any) {
     };
 
     return (
-       <div className="container-fluid">
-               {/* <div id="heroBanner" className="carousel slide " data-bs-ride="carousel"> */}
-                   {/* <div className="carousel-indicators">
-                       <button type="button" data-bs-target="#heroBanner" data-bs-slide-to="0"
-                               className="active" aria-current="true" aria-label="Slide 1"></button>
-                       <button type="button" data-bs-target="#heroBanner" data-bs-slide-to="1"
-                               aria-label="Slide 2"></button>
-                       <button type="button" data-bs-target="#heroBanner" data-bs-slide-to="2"
-                               aria-label="Slide 3"></button>
-                   </div> */}
-                   {/* <div className="carousel-inner"> */}
+       <div className="" >
                    <Slider {...settings}>
                         {hero.hero.map((element: any, index: any)=>(
                             <div className="carousel-item active"  key={index}>
-                                <div className={`${styles.banner} ${styles.banner1}`} style={{background: `url(${element.img})`, backgroundColor: element.color}}>
-                                    <div className={`container`}>
-                                        <div className={`row`}>
-                                            <div className={`col-6`}>
+                                <div className={`${styles.banner}`}>
+                                    <div className={``}>
+                                        <div className={`row justify-content-center align-items-center`}>
+                                            <div className={`col-md-6 px-5`}>
                                                 <div dangerouslySetInnerHTML={{ __html: element.text }} />
                                                 <button className={`btn btn-outline-light`}> {element.button_name} </button>
                                             </div>
-                                            <div className={`col-6`}></div>
+                                            <div className={`col-md-6`}>
+                                                <div className={styles.bannerImg}>
+                                                    <img src={element.img} alt="images" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

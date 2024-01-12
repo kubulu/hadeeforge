@@ -19,8 +19,8 @@ const handleDropdownClose = () => {
     return (
        <div>
 
-           <nav className="navbar navbar-expand-lg navbar-light">
-               <div className="container-fluid">
+           <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+               <div className="container">
                    <a href={nav.nav.logo.link}  className="d-inline-flex link-body-emphasis text-decoration-none">
                        <img src={nav.nav.logo.logo_img} alt="logo"/>
                    </a>
