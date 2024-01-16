@@ -24,7 +24,7 @@ export default function InnerProductSection(products: any) {
                    <div className={`col-md-3`} key={index}>
                        <div className={styles.serviceCard} >
                            <h2> {element.title} </h2>
-                           <Link href={element.link}><img src={`/images/more.svg`} alt="arrow" /> </Link>
+                           <Link href={element.link} ><img src={`/images/more.svg`} alt="arrow" /> </Link>
                        </div>
                    </div>
                    ))}
