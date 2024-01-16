@@ -12,7 +12,24 @@ export default function ClientSection(client: any) {
             arrows: false,
             speed: 2000,
             autoplaySpeed: 2000,
-            cssEase: "linear"
+            cssEase: "linear",
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        initialSlide: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         };
         return (
             <div className={`container-fluid`}>

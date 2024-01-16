@@ -1,8 +1,18 @@
 .certificate{
   background: linear-gradient(180deg,#ebf4ff,#e7f2ff);
+  img{
+    @media (max-width: 575.98px) {
+      width: 100%;
+      padding: 20px;
+    }
+  }
   .certificateCard{
     padding: 160px;
     transform: translateX(-12px);
+    @media (max-width: 575.98px) {
+      padding: 20px;
+    }
+
     //border-radius: 0px 20px 20px 0px;
     background: #0B3970;
     color: #ffffff;

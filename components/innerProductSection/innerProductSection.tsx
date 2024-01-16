@@ -9,13 +9,13 @@ export default function InnerProductSection(products: any) {
        <div className="container-fluid">
            <div className={styles.innerBanner}>
                 <div className={`row px-0 align-content-center`}>
-                    <div className={`col-6`}>
+                    <div className={`col-md-6`}>
                         <div className={styles.bannerContent}>
                                <div dangerouslySetInnerHTML={{ __html: products.products.text_field }} />
                         </div>
                     </div>
-                    <div className={`col-6`}>
-                        <img src={products.products.img} alt="images"/>
+                    <div className={`col-md-6`}>
+                        <img src={products.products.img} alt="images" className={`w-100`}/>
                     </div>
                 </div>
 

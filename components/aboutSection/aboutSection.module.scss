@@ -7,6 +7,10 @@
     color: #ffffff;
     margin-top: 20px;
     height: 100%;
+    @media (max-width: 575.98px) {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
     p{
       font-size: 18px;
       font-weight: 400;

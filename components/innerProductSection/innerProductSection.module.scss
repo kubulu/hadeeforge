@@ -13,7 +13,8 @@
     margin-top: 40px;
     min-height: 200px;
     img{
-    }
+
+      }
     h2{
       font-size: 24px;
       font-weight: 600;
@@ -22,8 +23,17 @@
     }
   }
   .bannerContent{
+    img{
+      @media (max-width: 575.98px) {
+        width: 100%;
+      }
+    }
     h2{
       font-size: 96px;
-    }
+      @media (max-width: 575.98px) {
+        font-size: 32px;
+      }
+
+      }
   }
 }
