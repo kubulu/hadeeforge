@@ -34,7 +34,7 @@ export default function ServiceSection(service: any) {
                                     <div className={`row`}>
                                         <div className={`col-6`}>
                                         <div dangerouslySetInnerHTML={{ __html: element.text }} />
-                                            <button className={`btn btn-outline-light`}> {element.button_name} </button>
+
                                         </div>
                                         <div className={`col-6`}></div>
                                     </div>
