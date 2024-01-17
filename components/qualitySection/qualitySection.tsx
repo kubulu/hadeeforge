@@ -27,6 +27,10 @@ export default function QualitySection(quality: any) {
                    </div>
                </div>
            </div>
+           <div className={styles.certificate}>
+               <h3>Awards and Certification</h3>
+              <img src={`/images/certificate-full.png`} />
+           </div>
        </div>
     )
 }
