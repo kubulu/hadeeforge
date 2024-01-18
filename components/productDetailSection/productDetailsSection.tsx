@@ -58,13 +58,8 @@ export default function ProductDetailsSection(productsDetails: any) {
                           </button>
                       </li>
                       <li className="nav-item" role="presentation">
-                          <button className={`nav-link ${locomotiveTab}`} id="locomotive-tab" data-bs-toggle="tab" data-bs-target="#locomotive"
-                                  type="button" role="tab" aria-controls="contact" aria-selected="false">Locomotive Parts
-                          </button>
-                      </li>
-                      <li className="nav-item" role="presentation">
                           <button className={`nav-link ${othersTab}`} id="others-tab" data-bs-toggle="tab" data-bs-target="#others"
-                                  type="button" role="tab" aria-controls="contact" aria-selected="false">Others
+                                  type="button" role="tab" aria-controls="contact" aria-selected="false">Industrial Parts
                           </button>
                       </li>
                   </ul>
@@ -110,12 +105,25 @@ export default function ProductDetailsSection(productsDetails: any) {
                         <div className={`row mt-5`}>
                                 {productsDetails.productsDetails.others.map((element: any, index: any)=>(
                                     <div className={`col-md-2`} key={index}>
-                                        <div className={styles.proImg}>
-                                            <img src={element.img} />
+                                        <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <img  src={element.img} />
                                         </div>
-                                        
+
                                     </div>
+
                                     ))}
+
+                            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+
+                                        <div className="modal-body">
+                                            ...
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                       </div>
                   </div>
