@@ -111,15 +111,19 @@ export default function ProductDetailsSection(productsDetails: any) {
                         </div>
                     </div>
                     <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-body">
-                {selectedImage && <img src={selectedImage} alt="Selected" className="img-fluid" />}
-              </div>
-              
-            </div>
-          </div>
-        </div>
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                          <div className="modal-body text-center">
+                            {selectedImage && <img src={selectedImage} alt="Selected" className={styles.bigImg} />}
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
               </div>
