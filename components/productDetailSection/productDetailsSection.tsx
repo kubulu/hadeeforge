@@ -9,13 +9,11 @@ export default function ProductDetailsSection(productsDetails: any) {
     const [tab, setTab] = useState(router.query.t)
     const [aerospaceTab, setAerospaceTab] = useState('');
     const [automotiveTab, setAutomotiveTab] = useState('');
-    const [locomotiveTab, setLocomotiveTab] = useState('');
-    const [othersTab, setOthersTab] = useState('');
+    const [industrialTab, setIndustrialTab] = useState('');
 
     const [aerospaceContent, setAerospaceContent] = useState('');
     const [automotiveContent, setAutomotiveContent] = useState('');
-    const [locomotiveContent, setLocomotiveContent] = useState('');
-    const [othersContent, setOthersContent] = useState('');
+    const [industrialContent, setIndustrialContent] = useState('');
     useEffect(function(){
         if(tab == 'aerospace'){
             setAerospaceTab('active');
@@ -25,15 +23,21 @@ export default function ProductDetailsSection(productsDetails: any) {
             setAutomotiveTab('active');
             setAutomotiveContent('show active');
         }
-        if(tab == 'locomotive'){
-            setLocomotiveTab('active');
-            setLocomotiveContent('show active');
-        }
-        if(tab == 'others'){
-            setOthersTab('active');
-            setOthersContent('show active');
+        if(tab == 'industrial'){
+            setIndustrialTab('active');
+            setIndustrialContent('show active');
         }
     },[tab])
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imgSrc: any) => {
+      setSelectedImage(imgSrc);
+    };
+  
+    const closeModal = () => {
+      setSelectedImage(null);
+    };
     
     return (
       <div className={styles.proDetails}>
@@ -58,74 +62,64 @@ export default function ProductDetailsSection(productsDetails: any) {
                           </button>
                       </li>
                       <li className="nav-item" role="presentation">
-                          <button className={`nav-link ${othersTab}`} id="others-tab" data-bs-toggle="tab" data-bs-target="#others"
+                          <button className={`nav-link ${industrialTab}`} id="industrial-tab" data-bs-toggle="tab" data-bs-target="#industrial"
                                   type="button" role="tab" aria-controls="contact" aria-selected="false">Industrial Parts
                           </button>
                       </li>
                   </ul>
                   <div className="tab-content" id="myTabContent">
+
                       <div className={`tab-pane fade ${automotiveContent}`} id="automotive" role="tabpanel" aria-labelledby="automotive-tab">
-                        
-                          <div className={`row mt-5`}>
-                          {productsDetails.productsDetails.automotive_parts.map((element: any, index: any)=>(
-                              <div className={`col-md-2`} key={index}>
-                                  <div className={styles.proImg}>
-                                      <img src={element.img} />
-                                  </div>
-                                  
-                              </div>
-                              ))}
-                          </div>
-                      </div>
-                      <div className={`tab-pane fade ${aerospaceContent}`} id="aerospace" role="tabpanel" aria-labelledby="aerospace-tab">
                         <div className={`row mt-5`}>
-                            {productsDetails.productsDetails.aerospace_parts.map((element: any, index: any)=>(
-                                <div className={`col-md-2`} key={index}>
-                                    <div className={styles.proImg}>
-                                        <img src={element.img} />
-                                    </div>
-                                    
-                                </div>
-                                ))}
-                        </div>
-                      </div>
-                      <div className={`tab-pane fade ${locomotiveContent}`} id="locomotive" role="tabpanel" aria-labelledby="locomotive-tab">
-                        <div className={`row mt-5`}>
-                            {productsDetails.productsDetails.locomotive_parts.map((element: any, index: any)=>(
-                                <div className={`col-md-2`} key={index}>
-                                    <div className={styles.proImg}>
-                                        <img src={element.img} />
-                                    </div>
-                                    
-                                </div>
-                                ))}
-                        </div>
-                      </div>
-                      <div className={`tab-pane fade ${othersContent}`} id="others" role="tabpanel" aria-labelledby="others-tab">
-                        <div className={`row mt-5`}>
-                                {productsDetails.productsDetails.others.map((element: any, index: any)=>(
+                                {productsDetails.productsDetails.automotive_parts.map((element: any, index: any)=>(
                                     <div className={`col-md-2`} key={index}>
-                                        <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => openModal(element.img)}>
                                             <img  src={element.img} />
                                         </div>
 
                                     </div>
 
                                     ))}
+                        </div>
+                    </div>
 
-                            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div className="modal-dialog">
-                                    <div className="modal-content">
-
-                                        <div className="modal-body">
-                                            ...
+                      <div className={`tab-pane fade ${aerospaceContent}`} id="aerospace" role="tabpanel" aria-labelledby="aerospace-tab">
+                        <div className={`row mt-5`}>
+                                {productsDetails.productsDetails.aerospace_parts.map((element: any, index: any)=>(
+                                    <div className={`col-md-2`} key={index}>
+                                        <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => openModal(element.img)}>
+                                            <img  src={element.img} />
                                         </div>
 
                                     </div>
-                                </div>
-                            </div>
-                            </div>
-                      </div>
+
+                                    ))}
+                        </div>
+                    </div>
+
+                      <div className={`tab-pane fade ${industrialContent}`} id="industrial" role="tabpanel" aria-labelledby="industrial-tab">
+                        <div className={`row mt-5`}>
+                                {productsDetails.productsDetails.industrial.map((element: any, index: any)=>(
+                                    <div className={`col-md-2`} key={index}>
+                                        <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => openModal(element.img)}>
+                                            <img  src={element.img} />
+                                        </div>
+
+                                    </div>
+
+                                    ))}
+                        </div>
+                    </div>
+                    <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-body">
+                {selectedImage && <img src={selectedImage} alt="Selected" className="img-fluid" />}
+              </div>
+              
+            </div>
+          </div>
+        </div>
                   </div>
 
               </div>

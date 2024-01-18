@@ -10,7 +10,7 @@ export default function SectorSection(sector: any) {
            <div className={styles.sectorSection}>
                <div className={`row`}>
                     {sector.sector.map((element: any, index: any)=>(
-                        <div className={`col-md-3`} key={index}>
+                        <div className={`col-md-4`} key={index}>
                             <div className={styles.sectorCard}>
                                 <div className={`img`}><img src={element.icon} alt="image"/> </div>
                                 <div>
