@@ -5,15 +5,19 @@ import { useRouter } from 'next/router'
 
 
 export default function ProductDetailsSection(productsDetails: any) {
+console.log('IND==',productsDetails);
+
     const router = useRouter()
     const [tab, setTab] = useState(router.query.t)
     const [aerospaceTab, setAerospaceTab] = useState('');
     const [automotiveTab, setAutomotiveTab] = useState('');
     const [industrialTab, setIndustrialTab] = useState('');
+    const [othersTab, setOthersTab] = useState('');
 
     const [aerospaceContent, setAerospaceContent] = useState('');
     const [automotiveContent, setAutomotiveContent] = useState('');
     const [industrialContent, setIndustrialContent] = useState('');
+    const [othersContent, setOthersContent] = useState('');
     useEffect(function(){
         if(tab == 'aerospace'){
             setAerospaceTab('active');
@@ -26,6 +30,10 @@ export default function ProductDetailsSection(productsDetails: any) {
         if(tab == 'industrial'){
             setIndustrialTab('active');
             setIndustrialContent('show active');
+        }
+        if(tab == 'others'){
+            setOthersTab('active');
+            setOthersContent('show active');
         }
     },[tab])
 
@@ -66,12 +74,6 @@ export default function ProductDetailsSection(productsDetails: any) {
                                   type="button" role="tab" aria-controls="contact" aria-selected="false">Industrial Parts
                           </button>
                       </li>
-                      <li className="nav-item" role="presentation">
-                          <button className={`nav-link ${industrialTab}`} id="industrial-tab" data-bs-toggle="tab" data-bs-target="#others"
-                                  type="button" role="tab" aria-controls="contact" aria-selected="false">Others
-                          </button>
-                      </li>
-
                   </ul>
                   <div className="tab-content" id="myTabContent">
 
@@ -149,7 +151,7 @@ export default function ProductDetailsSection(productsDetails: any) {
                                           <img  src={element.img} />
                                       </div>
 
-                                  </div>
+                                    </div>
 
                               ))}
                           </div>
