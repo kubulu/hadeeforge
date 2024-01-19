@@ -8,7 +8,7 @@ export default function AboutContent(aboutContent: any) {
            <div className={styles.aboutContent}>
                 <div className={`row px-0 justify-content-center`}>
                     <div className={`col-8 text-center pt-5 pb-5`}>
-                        <h3> {aboutContent.aboutContent.text} </h3>
+                        <div dangerouslySetInnerHTML={{ __html: aboutContent.aboutContent.text }} />
                     </div>
                 </div>
                 <div className={`row pb-5`}>
