@@ -9,8 +9,7 @@ export default function AboutForgeContent(aboutForge: any) {
            <div className={styles.aboutContent}>
                 <div className={`row px-0 justify-content-center`}>
                     <div className={`col-md-8 text-center pt-5 pb-5`}>
-                        <h1> {aboutForge.aboutForge.title} </h1>
-                        <h3> {aboutForge.aboutForge.text} </h3>
+                    <div dangerouslySetInnerHTML={{ __html: aboutForge.aboutForge.text }} />
                     </div>
                 </div>
                <div className={`row pb-5`}>
