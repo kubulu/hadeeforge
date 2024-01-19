@@ -88,7 +88,7 @@ console.log('IND==',productsDetails);
                                 <p> {productsDetails.productsDetails.heading_text} </p>
                             </div>
                             <h4> Steel Parts</h4>
-                                {productsDetails.productsDetails.automotive_parts.map((element: any, index: any)=>(
+                                {productsDetails.productsDetails.automotive.steel.map((element: any, index: any)=>(
                                     <div className={`col-md-2`} key={index}>
                                         <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => openModal(element.img)}>
                                             <img  src={element.img} />
@@ -98,7 +98,7 @@ console.log('IND==',productsDetails);
 
                                     ))}
                             <h4>Aluminum Parts</h4>
-                            {productsDetails.productsDetails.automotive_parts.map((element: any, index: any)=>(
+                            {productsDetails.productsDetails.automotive.aluminum.map((element: any, index: any)=>(
                                 <div className={`col-md-2`} key={index}>
                                     <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => openModal(element.img)}>
                                         <img  src={element.img} />
@@ -113,7 +113,7 @@ console.log('IND==',productsDetails);
                       <div className={`tab-pane fade ${aerospaceContent}`} id="aerospace" role="tabpanel" aria-labelledby="aerospace-tab">
                         <div className={`row mt-5 align-items-center justify-content-center`}>
                             <h4>Aluminum Parts</h4>
-                                {productsDetails.productsDetails.aerospace_parts.map((element: any, index: any)=>(
+                                {productsDetails.productsDetails.aerospace.aluminum.map((element: any, index: any)=>(
                                     <div className={`col-md-2`} key={index}>
                                         <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => openModal(element.img)}>
                                             <img  src={element.img} />
@@ -123,7 +123,7 @@ console.log('IND==',productsDetails);
 
                                     ))}
                             <h4>Stainless Steel Parts</h4>
-                            {productsDetails.productsDetails.aerospace_parts.map((element: any, index: any)=>(
+                            {productsDetails.productsDetails.aerospace.steel.map((element: any, index: any)=>(
                                 <div className={`col-md-2`} key={index}>
                                     <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => openModal(element.img)}>
                                         <img  src={element.img} />
