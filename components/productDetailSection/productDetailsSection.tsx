@@ -66,6 +66,7 @@ export default function ProductDetailsSection(productsDetails: any) {
                                   type="button" role="tab" aria-controls="contact" aria-selected="false">Industrial Parts
                           </button>
                       </li>
+
                   </ul>
                   <div className="tab-content" id="myTabContent">
 
