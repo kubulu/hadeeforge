@@ -6,9 +6,12 @@ export default function AboutContent(aboutContent: any) {
     return (
        <div className="container-fluid">
            <div className={styles.aboutContent}>
-                <div className={`row px-0 justify-content-center`}>
-                    <div className={`col-8 text-center pt-5 pb-5`}>
+                <div className={`row px-0 justify-content-center align-items-center`}>
+                    <div className={`col-md-8  pt-5 pb-5`}>
                         <div dangerouslySetInnerHTML={{ __html: aboutContent.aboutContent.text }} />
+                    </div>
+                    <div className={`col-md-4 pt-5 pb-5`}>
+                        <img src={`/images/about.png`} />
                     </div>
                 </div>
                 <div className={`row pb-5`}>
