@@ -17,7 +17,7 @@ export default function Page(props: any) {
           <div className={`container`}>
               <AboutForgeContent aboutForge={props.aboutForge[0].acf.about_content} />
           </div>
-          <CertificateSection certificate={props.certificate[0].acf} />
+
 
           <FooterSection footer={props.footer[0].acf} />
       </div>

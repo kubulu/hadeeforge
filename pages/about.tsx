@@ -20,7 +20,7 @@ export default function Page(props: any) {
           <div className={`container`}>
               <AboutContent aboutContent={props.about[0].acf.about_content} />
           </div>
-          <CertificateSection certificate={props.certificate[0].acf} />
+
 
           <FooterSection footer={props.footer[0].acf} />
       </div>
