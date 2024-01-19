@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function QualitySection(quality: any) {
    
-
+console.log('Q==',quality);
     return (
        <div className="container-fluid">
            <div className={styles.qualitySection}>
@@ -26,6 +26,22 @@ export default function QualitySection(quality: any) {
                    </div>
                </div>
            </div>
+           <div className={styles.certification}>
+                    <div className={`row px-0 mx-0`}>
+                        <div className={`col-md-6`}>
+                            <div className={styles.certificateCard}>
+                                {/* <h3> {certificate.certificate.title} </h3>
+                                <p> {certificate.certificate.text} </p> */}
+                                 <div dangerouslySetInnerHTML={{ __html: quality.quality.certificate.text }} />
+                            </div>
+                        </div>
+                        <div className={`col-md-6 d-flex justify-content-center align-items-center`}>
+                            <div className={styles.certificateImg}>
+                               <img src={quality.quality.certificate.img} alt="certificate"/>
+                            </div>
+                    </div>
+                </div>
+             </div>
            <div className={styles.certificate}>
                <h3>Awards and Certification</h3>
               <img src={quality.quality.award} />

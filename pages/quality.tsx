@@ -14,7 +14,6 @@ export default function Page(props: any) {
           <Navigation nav={props.nav[0].acf}/>
           <InnerBannerSection banner={props.quality[0].acf.banner} />
           <QualitySection quality={props.quality[0].acf} />
-          <CertificateSection certificate={props.certificate[0].acf} />
           <FooterSection footer={props.footer[0].acf} />
       </div>
   )
