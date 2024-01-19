@@ -1,9 +1,35 @@
-import React from "react";
-import styles from './contactSection.module.scss'
+import React, {useState} from "react";
+import styles from './contactSection.module.scss';
+// import axios from 'axios';
 import Link from "next/link";
 
 export default function ContactSection(contact: any) {
     // console.log('CONTACT=',contact);
+    const [formData, setFormData] = useState({
+        name: '',
+        mobile: '',
+        email: '',
+        message: '',
+      });
+
+      const handleChange = (e: any) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+      };
+
+      const handleSubmit = async (e: any) => {
+        e.preventDefault();
+    
+        try {
+        //   await axios.post('http://localhost:3001/sendEmail', formData);
+         
+          alert('Message sent successfully!');
+        } catch (error) {
+          console.error('Error sending message:', error);
+         
+          alert('Error sending message. Please try again later.');
+        }
+      };
 
     return (
         <div>
@@ -50,22 +76,22 @@ export default function ContactSection(contact: any) {
                                            <div className={styles.form}>
                                                <div className="mb-3">
                                                    <label  className="form-label">Name</label>
-                                                   <input type="email" className="form-control" placeholder="Full Name" />
+                                                   <input type="email" className="form-control" placeholder="Full Name" name="name"  value={formData.name} onChange={handleChange} />
                                                </div>
                                                <div className="mb-3">
                                                    <label className="form-label">Mobile Number</label>
-                                                   <input type="email" className="form-control" placeholder="Mobile Number" />
+                                                   <input type="email" className="form-control" placeholder="Mobile Number" name="mobile" value={formData.mobile} onChange={handleChange} />
                                                </div>
                                                <div className="mb-3">
                                                    <label className="form-label">Email address</label>
-                                                   <input type="email" className="form-control" placeholder="Email Address" />
+                                                   <input type="email" className="form-control" placeholder="Email Address" name="email" value={formData.email} onChange={handleChange} />
                                                </div>
                                                <div className="mb-3">
                                                    <label  className="form-label">Message</label>
-                                                   <textarea className="form-control" ></textarea>
+                                                   <textarea className="form-control" name="message" value={formData.message} onChange={handleChange} ></textarea>
                                                </div>
                                                <div className="mb-3">
-                                                  <button className={`btn btn-primary`}>SEND A MESSAGE</button>
+                                                  <button className={`btn btn-primary`} onClick={handleSubmit} >SEND A MESSAGE</button>
                                                </div>
                                            </div>
                                        </div>
