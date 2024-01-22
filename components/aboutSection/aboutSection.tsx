@@ -1,9 +1,16 @@
 import React from "react";
+import Slider from "react-slick";
 import styles from './aboutSection.module.scss'
 import Link from "next/link";
 
 export default function AboutSection(aboutSection: any) {
     // console.log('AbtSec=',aboutSection);
+    const settings = {
+        dots: false,
+        infinite: true,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+    };
 
     return (
        <div className="container-fluid">
@@ -17,7 +24,11 @@ export default function AboutSection(aboutSection: any) {
                     </div>
                     <div className={`col-md-4`}>
                         <div className={styles.aboutImg}>
-                            <img src={aboutSection.aboutSection.img} alt="about"/>
+                            <Slider {...settings}>
+                                <div><img src={aboutSection.aboutSection.img} alt="about"/></div>
+                                <div><img src="/images/office-1.png" /></div>
+                                <div><img src="/images/office-2.png" /></div>
+                            </Slider>
                         </div>
                     </div>
                 </div>
