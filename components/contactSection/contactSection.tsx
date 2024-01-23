@@ -60,13 +60,13 @@ export default function ContactSection(contact: any) {
                            <div className={`row`}>
                                <div className={`col-md-6 py-2`}>
                                    <div className={styles.addressCard}>
-                                    {contact.contact.address.map((element: any, index: any)=>(
-                                       <div className={styles.address} key={index}>
-                                           <h2> {element.title} </h2>
-                                           <p> {element.address} </p>
+                                   
+                                       <div className={styles.address}>
+                                           
+                                           <div dangerouslySetInnerHTML={{ __html: contact.contact.address }} /> 
                                            <div className={styles.border}></div>
                                        </div>
-                                       ))}
+                                    
                                    </div>
                                </div>
                                <div className={`col-md-6 py-2`}>
