@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function QualitySection(quality: any) {
 
-    console.log('Q==', quality);
+    // console.log('Q==', quality);
     return (
         <div>
             <div className="container-fluid">
@@ -31,8 +31,8 @@ export default function QualitySection(quality: any) {
 
             <div className={`container-fluid`}>
                 <div className={styles.certificate}>
-                    <h3>Certification</h3>
-                    <img src={quality.quality.award}/>
+                    <h3>Awards and Certification</h3>
+                    <img src={quality.quality.award.img}/>
                 </div>
                 <div className={styles.certificate}>
                     <h3>Awards</h3>
