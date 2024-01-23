@@ -1,11 +1,17 @@
 import React from "react";
+import Slider from "react-slick";
 import styles from './certificateSection.module.scss';
 import Link from "next/link";
 
+
 export default function CertificateSection(certificate: any) {
-// console.log('CERTIFII===',certificate);
-
-
+    const settings = {
+        dots: false,
+        infinite: true,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        arrows: false,
+    };
         return (
             <div>
                 <div className={styles.certificate}>
@@ -16,10 +22,21 @@ export default function CertificateSection(certificate: any) {
                                 <p> {certificate.certificate.text} </p>
                             </div>
                         </div>
-                        <div className={`col-md-6 d-flex justify-content-center align-items-center`}>
+                        <div className={`col-md-6`}>
+
                             <div className={styles.certificateImg}>
-                               <img src={certificate.certificate.img} alt="certificate"/>
+                                    <div>
+                                        <Slider {...settings}>
+                                        <img src="/images/ceer.png" alt="certificate"/>
+                                            <img src="/images/ceer1.png" alt="certificate"/>
+                                            <img src="/images/ceer2.png" alt="certificate"/>
+
+                                        </Slider>
+                                    </div>
+
                             </div>
+
+
                     </div>
                 </div>
             </div>
