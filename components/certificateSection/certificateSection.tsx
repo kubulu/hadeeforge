@@ -27,6 +27,7 @@ export default function CertificateSection(certificate: any) {
                             <div className={styles.certificateImg}>
                                     <div>
                                         <Slider {...settings}>
+                                            <img src="/images/hadeeforge-certificate.png" alt="certificate"/>
                                         <img src="/images/ceer.png" alt="certificate"/>
                                             <img src="/images/ceer1.png" alt="certificate"/>
                                             <img src="/images/ceer2.png" alt="certificate"/>
