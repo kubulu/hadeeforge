@@ -31,12 +31,12 @@ export default function QualitySection(quality: any) {
 
             <div className={`container-fluid`}>
                 <div className={styles.certificate}>
-                    <h3>Awards and Certification</h3>
+                    <h3> {quality.quality.award.title} </h3>
                     <img src={quality.quality.award.img}/>
                 </div>
                 <div className={styles.certificate}>
-                    <h3>Awards</h3>
-                    <img src='/images/awards-new.png'/>
+                    <h3> {quality.quality.certificate.title} </h3>
+                    <img src={quality.quality.certificate.img}/>
                 </div>
             </div>
         </div>
