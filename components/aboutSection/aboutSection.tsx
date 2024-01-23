@@ -10,6 +10,7 @@ export default function AboutSection(aboutSection: any) {
         infinite: true,
         slidesToScroll: 1,
         slidesToShow: 1,
+        autoplay: true,
     };
 
     return (

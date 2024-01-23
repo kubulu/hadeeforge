@@ -11,6 +11,7 @@ export default function CertificateSection(certificate: any) {
         slidesToScroll: 1,
         slidesToShow: 1,
         arrows: false,
+        autoplay: true,
     };
         return (
             <div>
