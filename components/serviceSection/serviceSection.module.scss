@@ -22,4 +22,7 @@
   background-repeat: no-repeat !important;
   background-position: right !important;
   background-size: cover !important;
+  @media (max-width: 575.98px) {
+    background-size: 100% !important;
+  }
 }
