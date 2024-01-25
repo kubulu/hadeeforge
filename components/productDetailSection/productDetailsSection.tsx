@@ -148,19 +148,6 @@ console.log('IND==',productsDetails);
                                     ))}
                         </div>
                     </div>
-                      <div className={`tab-pane fade ${industrialContent}`} id="industrial" role="tabpanel" aria-labelledby="others-tab">
-                          <div className={`row mt-5 align-items-center justify-content-center`}>
-                              {productsDetails.productsDetails.industrial.map((element: any, index: any)=>(
-                                  <div className={`col-md-2`} key={index}>
-                                      <div className={styles.proImg} data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => openModal(element.img)}>
-                                          <img  src={element.img} />
-                                      </div>
-
-                                    </div>
-
-                              ))}
-                          </div>
-                      </div>
                       <div className={`tab-pane fade ${othersContent}`} id="others" role="tabpanel" aria-labelledby="others-tab">
                           <div className={`row mt-5 align-items-center justify-content-center`}>
                               {productsDetails.productsDetails.others.map((element: any, index: any)=>(
