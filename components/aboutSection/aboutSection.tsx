@@ -26,9 +26,13 @@ export default function AboutSection(aboutSection: any) {
                     <div className={`col-md-4`}>
                         <div className={styles.aboutImg}>
                             <Slider {...settings}>
-                                <div><img src={aboutSection.aboutSection.img} alt="about"/></div>
-                                <div><img src="/images/office-1.png" /></div>
-                                <div><img src="/images/office-2.png" /></div>
+                                {aboutSection.aboutSection.img_field.map((element: any, index: any)=>(
+                                <div key={index}>
+                                    <img src={element.img} alt="about"/>
+                                </div>
+                                // <div><img src="/images/office-1.png" /></div>
+                                // <div><img src="/images/office-2.png" /></div>
+                                ))}
                             </Slider>
                         </div>
                     </div>

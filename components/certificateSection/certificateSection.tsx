@@ -25,17 +25,16 @@ export default function CertificateSection(certificate: any) {
                         </div>
                         <div className={`col-md-6`}>
 
-                            <div className={styles.certificateImg}>
-                                    <div>
-                                        <Slider {...settings}>
-                                            <img src="/images/hadeeforge-certificate.png" alt="certificate"/>
-                                        <img src="/images/ceer.png" alt="certificate"/>
-                                            <img src="/images/ceer1.png" alt="certificate"/>
-                                            <img src="/images/ceer2.png" alt="certificate"/>
-
-                                        </Slider>
-                                    </div>
-
+                            <div className={styles.certificateImg}>                               
+                                <div>
+                                    <Slider {...settings}>
+                                        {certificate.certificate.img_field.map((element: any, index: any)=>(
+                                            <div key={index}>   
+                                                <img src={element.img} alt="certificate" />
+                                            </div>
+                                        ))}
+                                    </Slider>
+                                </div>                              
                             </div>
 
 

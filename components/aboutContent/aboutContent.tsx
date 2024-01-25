@@ -11,7 +11,7 @@ export default function AboutContent(aboutContent: any) {
                         <div dangerouslySetInnerHTML={{ __html: aboutContent.aboutContent.text }} />
                     </div>
                     <div className={`col-md-4 pt-5 pb-5`}>
-                        <img src={`/images/plant.png`} />
+                        <img src={aboutContent.aboutContent.img} />
                     </div>
                 </div>
                 <div className={`row pb-5`}>
