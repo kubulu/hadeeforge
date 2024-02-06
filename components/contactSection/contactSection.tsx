@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import styles from './contactSection.module.scss';
-// import axios from 'axios';
+import axios from 'axios';
 import Link from "next/link";
+import { ApiService } from '../../services/api.service';
 
 export default function ContactSection(contact: any) {
     // console.log('CONTACT=',contact);
+    const baseUrl = new ApiService();
     const [formData, setFormData] = useState({
         name: '',
         mobile: '',
@@ -19,16 +21,15 @@ export default function ContactSection(contact: any) {
 
       const handleSubmit = async (e: any) => {
         e.preventDefault();
-    
         try {
-        //   await axios.post('http://localhost:3001/sendEmail', formData);
-         
-          alert('Message sent successfully!');
+          await axios.post(baseUrl.getBaseUrl() + 'wp-json/custom-form/v1/contact/send', formData);
+          console.log('Message sending succeddfully');
         } catch (error) {
           console.error('Error sending message:', error);
          
-          alert('Error sending message. Please try again later.');
+
         }
+        window.location.reload();
       };
 
     return (
